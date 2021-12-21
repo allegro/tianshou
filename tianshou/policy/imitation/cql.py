@@ -1,14 +1,14 @@
 from typing import Any, Dict
 
 import torch
-from numpy.core.numeric import extend_all
 
 from tianshou.data import Batch
 from tianshou.policy import SACPolicy
 
 
 class CQLPolicy(SACPolicy):
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.num_samples = 10
         self.lagrange_budget = False
 
